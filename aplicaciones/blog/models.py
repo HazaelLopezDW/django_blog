@@ -3,7 +3,7 @@ from django.db import models
 class Categoria(models.Model):
     id = models.AutoField(primary_key = True)
     nombre = models.CharField('Nombre de la Categoria', max_length = 100, null = False, blank = False)
-    estado = models.BooleandFiel('Categoria Activada/Categoria no Activada', default = True)
+    estado = models.BooleanField('Categoria Activada/Categoria no Activada', default = True)
     fecha_creacion = models.DateField('Fecha de Creacion', auto_now = False, auto_now_add = True)
 
     class Meta:
