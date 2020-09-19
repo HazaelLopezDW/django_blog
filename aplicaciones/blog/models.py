@@ -11,7 +11,7 @@ class Categoria(models.Model):
         verbose_name_plural = 'Categorias'
 
     def __str__(self):
-        return self.Nombre
+        return self.nombre
 
 class Autor(models.Model):
     id = models.AutoField(primary_key = True)
