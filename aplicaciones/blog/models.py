@@ -3,7 +3,7 @@ from django.db import models
 class Categoria(models.Model):
     id = models.AutoField(primary_key = True)
     nombre = models.CharField('Nombre de la Categoria', max_length = 100, null = False, blank = False)
-    estado = models.BooleandField('Categoria Activada/Categoria no Activada', default = True)
+    estado = models.BooleandFiel('Categoria Activada/Categoria no Activada', default = True)
     fecha_creacion = models.DateField('Fecha de Creacion', auto_now = False, auto_now_add = True)
 
     class Meta:
@@ -22,7 +22,7 @@ class Autor(models.Model):
     instagram = models.URLField('Instagram', null = True, blank = True)
     web = models.URLField('Web', null = True, blank = True)
     correo = models.EmailField('Correo Electronico', max_length = 255, null = False, blank = False)
-    estado = models.BooleandField('Autor Activo/No Activo', default = True)
+    estado = models.BooleanField('Autor Activo/No Activo', default = True)
     fecha_creacion = models.DateField('Fecha de Creacion', auto_now = False, auto_now_add = True)
 
     class Meta:
