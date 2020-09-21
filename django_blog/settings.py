@@ -104,10 +104,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Configuracion de ckeditor
 CKEDITOR_CONFIGS = {
-    'defualt': {
+    'default': {
         'toolbar': 'full',
-        'height': 300,
-        'widht': 300,
     },
 }
 
