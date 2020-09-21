@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Categoria(models.Model):
     id = models.AutoField(primary_key = True)
@@ -37,7 +38,7 @@ class Post(models.Model):
     titulo = models.CharField('Titulo', max_length = 90, blank = False, null = False)
     slug = models.CharField('Slug', max_length = 100, blank = False, null = False)
     descripcion = models.CharField('Descripcion', max_length = 100, blank = False, null = False)
-    contenido = models.TextField('Contenido')
+    contenido = models.RichTextField()
     imagen = models.URLField(max_length = 255, blank = False, null = False)
     autor = models.ForeignKey(Autor, on_delete = models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
