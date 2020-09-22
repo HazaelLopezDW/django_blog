@@ -61,13 +61,13 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('{% static 'img/home-bg.jpg' %}')">
+  <header class="masthead" style="background-image: url({% block imagen %}{% static 'img/home-bg.jpg' %}{% endblock imagen %})">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h3>Blog Developer.HD</h3>
+            <h3>{% block titulo_principal %}Blog Developer.HD{% endblock titulo_principal %}</h3>
           </div>
         </div>
       </div>
