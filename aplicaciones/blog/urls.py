@@ -3,5 +3,5 @@ from .views import Home,Generales
 
 urlpatterns = [
     path('', Home, name = 'index'),
-    path('', Generales, name = 'generales'),
+    path('generales/', Generales, name = 'generales'),
 ]
