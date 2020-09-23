@@ -5,6 +5,13 @@ def Home(request):
     posts = Post.objects.filter(estado = True)
     return render(request, 'index.html', {'posts': posts})
 
+def DetallePost(request, slug):
+    post = Post.objects.get(
+        slug = slug
+    )
+    print(post)
+    return render(request, 'post.html')
+
 def Generales(request):
     posts = Post.objects.filter(
         estado = True,
