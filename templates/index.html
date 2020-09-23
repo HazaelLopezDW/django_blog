@@ -76,13 +76,14 @@
   </header>
 
   <!-- Main Content -->
+  {% block contenido%}
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         {% if posts %}
           {% for post in posts %}
             <div class="post-preview">
-              <a href="post.html">
+              <a href="{% url 'blog:detalle_post' post.slug %}">
                 <h2 class="post-title">
                   {{ post.titulo }}
                 </h2>
@@ -106,8 +107,8 @@
       </div>
     </div>
   </div>
-
   <hr>
+  {% endblock contenido%}
 
   <!-- Footer -->
   <footer>
