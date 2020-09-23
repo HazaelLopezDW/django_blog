@@ -9,7 +9,7 @@ def DetallePost(request, slug):
     post = Post.objects.get(
         slug = slug
     )
-    return render(request, 'post.html',{'detalle_post'}:post)
+    return render(request, 'post.html','detalle_post':post)
 
 def Generales(request):
     posts = Post.objects.filter(
