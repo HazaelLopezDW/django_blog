@@ -66,14 +66,34 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-lg-12 col-md-10 mx-auto">
           <div class="site-heading">
             <h3>{% block titulo_principal %}Blog Developer.HD{% endblock titulo_principal %}</h3>
+            <br/>
+            <!-- CREAMOS NUESTRO FORMULARIO PARA NUESTRO BOOTON DE BUSQUEDA -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <form method="get">
+                    <div id="custom-search-input">
+                      <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar...." name="buscar">
+                        <span class="input-group-list">
+                          <i class="icon icon-search"></i>
+                          <button type="submit" class="btn-danger boton btn-success ">Buscar</button>
+                        </span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header>
+
 
   <!-- Main Content -->
   <div class="container">
