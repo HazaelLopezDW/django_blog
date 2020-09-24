@@ -23,6 +23,9 @@
 
   <!-- Custom styles for this template -->
   <link href="{% static 'css/clean-blog.min.css'%}" rel="stylesheet">
+
+  <!-- Ponemos nuestra hoja de estilos en cascada personalizada de ultimo para que no se sobre escriban -->
+  <link rel="stylesheet" href="{% static 'css/estilos-personalizados.css' %}">
 </head>
 
 <body>
@@ -80,7 +83,7 @@
                         <input type="text" class="form-control" placeholder="Buscar...." name="buscar">
                         <span class="input-group-list">
                           <i class="icon icon-search"></i>
-                          <button type="submit" class="btn-danger boton btn-success estilos-bnt">Buscar</button>
+                          <button type="submit" class="btn-danger boton btn-success estilos-btn">Buscar</button>
                         </span>
                       </div>
                     </div>
