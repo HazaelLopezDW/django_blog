@@ -72,7 +72,8 @@
         <div class="col-lg-12 col-md-10 mx-auto">
           <div class="site-heading">
             <h3>{% block titulo_principal %}Blog Developer.HD{% endblock titulo_principal %}</h3>
-            <br/>
+            <br/><br/>
+            {% block barra_busqueda %}
             <!-- CREAMOS NUESTRO FORMULARIO PARA NUESTRO BOOTON DE BUSQUEDA -->
             <div class="container">
               <div class="row">
@@ -80,7 +81,7 @@
                   <form method="get">
                     <div id="custom-search-input">
                       <div class="input-group col-md-12">
-                        <input type="text" class="form-control" placeholder="Buscar...." name="buscar">
+                        <input type="text" class="form-control" placeholder="Buscar...." name="buscar" value="{{ request.GET.buscar }}">
                         <span class="input-group-list">
                           <i class="icon icon-search"></i>
                           <button type="submit" class="btn-danger boton btn-success estilos-btn">Buscar</button>
@@ -91,6 +92,7 @@
                 </div>
               </div>
             </div>
+            {% endblock barra_busqueda %}
           </div>
         </div>
       </div>
