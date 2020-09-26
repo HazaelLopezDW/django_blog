@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Post,Categoria
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 def Home(request):
     queryset = request.GET.get("buscar")
@@ -11,6 +12,10 @@ def Home(request):
             Q(titulo__icontains = queryset) |
             Q(descripcion__icontains = queryset)
         ).distinct()
+
+    paginator = Paginator(posts,2)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     return render(request, 'index.html', {'posts': posts})
 
 def DetallePost(request, slug):
@@ -30,6 +35,10 @@ def Generales(request):
             estado = True,
             categoria = Categoria.objects.get(nombre__iexact = 'General'),
         ).distinct()
+
+    paginator = Paginator(posts,2)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     return render(request, 'generales.html',{'posts':posts})
 
 def Programacion(request):
@@ -45,6 +54,10 @@ def Programacion(request):
             estado = True,
             categoria = Categoria.objects.get(nombre__iexact = 'Programacion')
         ).distinct()
+
+    paginator = Paginator(posts,2)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     return render(request, 'programacion.html', {'posts':posts})
 
 def Videojuegos(request):
@@ -60,6 +73,10 @@ def Videojuegos(request):
             estado = True,
             categoria = Categoria.objects.get(nombre__iexact = 'VideoJuegos')
         ).distinct()
+
+    paginator = Paginator(posts,2)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     return render(request, 'videojuegos.html', {'posts':posts})
 
 def Tecnologia(request):
@@ -75,6 +92,10 @@ def Tecnologia(request):
             estado = True,
             categoria = Categoria.objects.get(nombre__iexact = 'Tecnologia')
         ).distinct()
+
+    paginator = Paginator(posts,2)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     return render(request, 'tecnologia.html', {'posts':posts})
 
 def Tutoriales(request):
@@ -90,4 +111,8 @@ def Tutoriales(request):
             estado = True,
             categoria = Categoria.objects.get(nombre__iexact = 'Tutoriales')
         ).distinct()
+
+    paginator = Paginator(posts,2)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     return render(request, 'tutoriales.html', {'posts':posts})
