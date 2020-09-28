@@ -13,7 +13,7 @@ def Home(request):
             Q(descripcion__icontains = queryset)
         ).distinct()
 
-    paginator = Paginator(posts,2)
+    paginator = Paginator(posts,5)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'index.html', {'posts': posts})
@@ -36,7 +36,7 @@ def Generales(request):
             categoria = Categoria.objects.get(nombre__iexact = 'General'),
         ).distinct()
 
-    paginator = Paginator(posts,2)
+    paginator = Paginator(posts,5)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'generales.html',{'posts':posts})
@@ -55,7 +55,7 @@ def Programacion(request):
             categoria = Categoria.objects.get(nombre__iexact = 'Programacion')
         ).distinct()
 
-    paginator = Paginator(posts,2)
+    paginator = Paginator(posts,5)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'programacion.html', {'posts':posts})
@@ -74,7 +74,7 @@ def Videojuegos(request):
             categoria = Categoria.objects.get(nombre__iexact = 'VideoJuegos')
         ).distinct()
 
-    paginator = Paginator(posts,2)
+    paginator = Paginator(posts,5)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'videojuegos.html', {'posts':posts})
@@ -93,7 +93,7 @@ def Tecnologia(request):
             categoria = Categoria.objects.get(nombre__iexact = 'Tecnologia')
         ).distinct()
 
-    paginator = Paginator(posts,2)
+    paginator = Paginator(posts,5)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'tecnologia.html', {'posts':posts})
@@ -112,7 +112,7 @@ def Tutoriales(request):
             categoria = Categoria.objects.get(nombre__iexact = 'Tutoriales')
         ).distinct()
 
-    paginator = Paginator(posts,2)
+    paginator = Paginator(posts,5)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'tutoriales.html', {'posts':posts})
